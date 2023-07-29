@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Login/Register | GrowFast</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/bd67cb73f4.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="hero">
+            <div class="form-box">
+                <b><p>Welcome to GrowFast !!</p></b>
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                </div>
+                <div class="social-icon">
+                    <a href="https://www.facebook.com/home.php">
+                        <img src="img/fb.png">
+                    </a>
+
+                    <a href="https://twitter.com/home">
+                        <img src="img/tw.png">
+                    </a>
+                    <a href="https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1">
+                        <img src="img/gp.png">
+                    </a>
+                </div>
+                <form id="login" class="input-group" action="dashboard.html" autocomplete="on">
+                    <input type="text" class="input-field" placeholder="User Id" required>
+                    <input type="password" class="input-field" id="email" placeholder="Enter Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*?]).{8,}$" required>
+                    <!---<p id="email-message" style="display:none;">Password must be at least 8 characters long <br> and include at least one digit, one lowercase letter, one uppercase letter, and one special character (!@#$%^&*?)</p>--->
+                    <input type="checkbox" class="check-box" required><span>Remember Password</span>
+                    <a href="./dashboard.html">
+                        <input type="submit" value="Log In" class="submit-btn">
+                    </a>
+                </form>
+                <form id="register" class="input-group" action="login.html" autocomplete="on">
+                    <input type="text" class="input-field" placeholder="User Id" required autocomplete="on">
+                    <input type="email" class="input-field" placeholder="Email Id" required>
+                    <input type="tel" class="input-field" placeholder="Phone Number" pattern="[0-9]{5}[0-9]{5}" required>
+                    <input type="password" class="input-field" id="emailid" placeholder="Enter Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*?]).{8,}$" required>
+                    <!----<p id="email-message" style="display:none;">Password must be at least 8 characters long <br> and include at least one digit, one lowercase letter, one uppercase letter, and one special character (!@#$%^&*?)</p>--->
+                    <input type="checkbox" class="check-box" required><span>I agree to the Terms & Conditions.</span>
+                    <a href="./login.html">
+                        <input type="submit" value="Register" class="submit-btn">
+                    </a>
+                </form>
+                <div class="login-copyright">
+                    <p><i class="fa-regular fa-copyright"></i> Copyright 2023 - GrowFast</p>
+                </div>               
+            </div>
+            
+        </div>
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+
+            function register(){
+                x.style.left = "-400px"
+                y.style.left = "50px"
+                z.style.left = "110px"
+            }
+            function login(){
+                x.style.left = "50px"
+                y.style.left = "450px"
+                z.style.left = "0px"
+            }
+            /*const emailInput = document.getElementById('email');
+            const emailMessage = document.getElementById('email-message');
+
+            emailInput.addEventListener('focus', () => {
+                emailMessage.style.display = 'block';
+            });
+
+            emailInput.addEventListener('blur', () => {
+                emailMessage.style.display = 'none';
+            });
+            var emailInput = document.getElementById("email");
+            emailInput.setCustomValidity("Password must be at least 8 characters long and include at least one digit, one lowercase letter, one uppercase letter, and one special character (!@#$%^&*?).");
+            var email = document.getElementById("emailid");
+            email.setCustomValidity("Password must be at least 8 characters long and include at least one digit, one lowercase letter, one uppercase letter, and one special character (!@#$%^&*?).");
+            
+           emailInput.addEventListener('input', function(event) {
+                if (emailInput.validity.valid) {
+                    emailInput.setCustomValidity('');
+                }
+            });
+            email.addEventListener('input', function(event) {
+                if (email.validity.valid) {
+                    email.setCustomValidity('');
+                }
+            });*/
+        </script>
+    </body>
+</html>

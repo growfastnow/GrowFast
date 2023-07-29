@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" pattern="[a-zA-Z0-9]+" required>
+        <button type="submit">Submit</button>
+      </form>
+      
+      <script>
+        var usernameInput = document.getElementById('username');
+        usernameInput.setCustomValidity('Please enter a valid username.');
+      
+        usernameInput.addEventListener('input', function(event) {
+          if (usernameInput.validity.valid) {
+            usernameInput.setCustomValidity('');
+          }
+        });
+      
+        document.querySelector('form').addEventListener('submit', function(event) {
+          if (!usernameInput.validity.valid) {
+            usernameInput.reportValidity();
+            event.preventDefault();
+          }
+        });
+      </script>
+      
+      
+</html>
